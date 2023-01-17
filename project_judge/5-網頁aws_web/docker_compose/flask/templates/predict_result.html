@@ -1,0 +1,419 @@
+{% extends "_base.html" %}
+{% block title %}罪刑預測{% endblock title %}
+{% block page_content %}
+
+<style>
+    #mainNav {
+        min-height: 3.5rem;
+        background-color: rgb(246, 204, 132);
+    }
+
+    #mainNav .nav-link:hover {
+        color: rgb(43, 5, 75);
+    }
+
+    .h4 {
+        color: rgb(120, 17, 17)
+    }
+
+    h2 {
+
+        color: rgb(43, 5, 75);
+
+    }
+
+    /* .col {
+        border: 3px solid #435a71;
+    } */
+
+    hr {
+        color: rgb(187, 92, 92);
+
+    }
+
+    .bg1 {
+        /* background: url("/static/assets/img/123.gif");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll; */
+        background: linear-gradient(to bottom right, rgb(185, 114, 114), rgba(247, 239, 151, 0.935) 75%, rgb(185, 114, 114) 100%);
+    }
+
+    .border {
+
+        border: 1px solid #041f3b !important;
+
+        font-size: 20px;
+        color:
+            rgb(74, 2, 18);
+    }
+
+    .fontcolor {
+        font-size: 20px;
+        color:
+            rgb(74, 2, 18);
+    }
+
+    .form-check-label {
+        font-size: 16px;
+    }
+
+    .bg2 {
+        background-color: #f6f8fb90 !important;
+    }
+
+    .text-secondary {
+        color: #041f3b !important;
+    }
+
+    /* new */
+
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, rgb(211, 135, 13) 50%, rgb(107, 74, 22) 50%);
+        bottom: 0;
+        left: -50%;
+        opacity: .5;
+        position: fixed;
+        right: -50%;
+        top: 0;
+        z-index: -1;
+    }
+
+    .bg21 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+    }
+</style>
+
+<!-- <header class="bg1"> -->
+<br><br>
+<div class="bg"></div>
+<div class="bg bg21"></div>
+<div class="bg bg3"></div>
+
+
+
+
+<div class="container px-4 py-5 ">
+
+    <!-- <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">傷害罪預測</h2> -->
+
+    <div class="row py-3  align-items-center">
+        <div class="post-slider mb-4">
+            <img src="../static/assets/img/pre2.png" class="card-img" alt="傷害罪?">
+
+        </div>
+        <div class=".col-md-6 .offset-md-3">
+            <div class="card border border-4 border-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="h4 font-weight-bold text-uppercase mb-1 ">
+
+                                建議結果</div>
+                            <div class="h3 mb-0 font-weight-bold text-gray-800 ">{{ predict1 }} {{ predict2
+                                }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <img src="../static/assets/favicon.ico" width=auto height="75" class="me-3">
+                        </div>
+                        <hr>
+                        {% include predict3 %}
+                        <!-- <div class="col-auto">
+                            <img src={{ predict3 }} width=auto height="75" class="me-3">
+                        </div> -->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <form class="row g-3 needs-validation" novalidate method="post" target="postTo" action="/predict"
+        enctype="multipart/form-data">
+        <div class="container">
+
+            <div class="col ">
+                <div class="bg2 h-100 p-5 border rounded-3 ">
+                    <h2>構成要件</h2>
+                    <hr class="my-6">
+
+
+                    <div class="row mb-3">
+
+
+                        <div class="col-lg-4 col-sm-6">
+                            <label class="form-label">傷害意圖</label>
+                            <!-- <a href="#insult" data-bs-toggle="tooltip" data-bs-placement="right" title="請點擊參考侮辱內容介紹">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                </svg>
+                            </a> -->
+                            <select class="form-select" id="content" name="傷害意圖" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='過失'>過失
+                                <option value='非故意非過失'>非故意非過失
+                                <option value='故意傷害'>故意傷害
+                                <option value='故意重傷害'>故意重傷害
+
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 col-sm-6">
+
+
+                            <label class="form-label">造成被害人受傷程度</label>
+                            <select class="form-select" id="content" name="造成被害人受傷程度" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='非重傷'>非重傷
+                                <option value='重傷'>重傷
+                                <option value='死亡'>死亡
+                                <option value='無受傷結果'>無受傷結果
+
+
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <label class="form-label">傷害對象</label>
+                            <select class="form-select" id="location" name="傷害對象" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='尊親屬'>尊親屬（父母與祖父母)
+                                <option value='非尊親屬'>非尊親屬
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-3 py-3">
+
+                <div class="col">
+                    <div class="h-100 p-5  border rounded-3 bg2">
+                        <h2>攻擊方式與結果</h2>
+                        <hr class="my-6">
+                        <div class="col-md-10">
+                            <label class="form-label">傷害方式</label>
+
+                            <select class="form-select" id="content" name="傷害方式" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='0'>徒手攻擊
+                                <option value='1'>使用兇器
+
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+                        <hr class="my-6">
+                        <div class="col-md-10">
+                            <label class="form-label">下手力道</label>
+                            <select class="form-select" id="content" name="下手力道" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='0'>普通
+                                <option value='1'>重度
+
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+                        <hr class="my-6">
+                        <div class="col-md-10">
+                            <label class="form-label">傷害結果</label>
+                            <select class="form-select" id="location" name="傷害結果" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='0'>輕度受傷 例如：皮肉傷、擦挫傷
+                                <option value='1'>中度受傷 例如：四肢骨折、齒裂
+                                <option value='2'>重度受傷 例如：臟器外露、顱內出血
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="h-100 p-5 bg2 bg-light border rounded-3">
+                        <h2>被告個人條件及情況</h2>
+                        <hr class="my-6">
+                        <div class="col-md-10">
+                            <label class="form-label">教育程度</label>
+                            <select class="form-select" id="form-label" name="教育程度" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='1'>國中以下
+                                <option value='0'>高中職
+                                <option value='0'>大專院校以上
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+                        <hr class="my-8">
+                        <h6 class="mb-3 fontcolor">被告身心狀況(有無身心障礙)</h6>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="被告身心狀況" id="inlineRadio1" value="1"
+                                required>
+                            <label class="form-check-label" for="inlineRadio1">有 (有正式證明或醫師診斷)</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="被告身心狀況" id="inlineRadio2" value="0"
+                                required>
+                            <label class="form-check-label" for="inlineRadio2">無
+                            </label>
+                        </div>
+                        <hr class="my-6">
+                        <div class="col-md-10">
+                            <label for="validationDefault04" class="form-label">與被害人關係</label>
+                            <select class="form-select" id="validationDefault04" name="與被害人關係" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='0'>非家庭成員
+                                <option value='1'>家庭成員
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+                        <hr class="my-6">
+                        <div class="col-md-10">
+                            <label for="validationDefault04" class="form-label">影響判決因素(罪責)</label>
+                            <select class="form-select" id="validationDefault04" name="影響判決因素" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='1'>加重因素 例如：累犯
+                                <option value='2'>減輕因素 例如：主動自首
+                                <option value='0'>無影響 例如：初犯
+
+
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="h-100 p-5 bg2 bg-light border rounded-3">
+                        <h2>被告犯後態度</h2>
+                        <hr class="my-6">
+                        <div class="col-md-8">
+                            <label for="validationDefault04" class="form-label">和解狀況</label>
+                            <select class="form-select" id="validationDefault04" name="和解狀況" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='2'>已和解
+                                <option value='1'>無和解意願
+                                <option value='0'>其他 例如：有和解意願但尚未和解
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+                        <hr class="my-6">
+
+                        <div class="col-md-8">
+                            <label for="validationDefault04" class="form-label">坦承情況</label>
+                            <select class="form-select" id="validationDefault04" name="坦承情況" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='0'>承認
+                                <option value='2'>先否認才承認
+                                <option value='1'>矢口否認
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+
+                        <hr class="my-6">
+                        <div class="col-md-8">
+                            <label for="validationDefault04" class="form-label">犯後態度</label>
+                            <select class="form-select" id="validationDefault04" name="犯後態度" required>
+                                <option selected disabled value="">請選擇</option>
+                                <option value='1'>深感後悔
+                                <option value='2'>態度不佳 例如：我沒錯
+                                <option value='0'>其他
+                            </select>
+                            <div class="invalid-feedback">
+                                請填寫這個欄位。
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" class="btn btn-outline-secondary my-2"
+                    style="background-color:orange">Submit</button>
+                <div class="vr"></div>
+                <a href="/predict" class="btn btn-outline-danger my-2" style="background-color:bisque">Reset</a>
+            </div>
+    </form>
+
+    <!-- <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                'use strict'
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.querySelectorAll('.needs-validation')
+
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
+            })()
+        </script> -->
+
+
+
+</div>
+</div>
+
+
+
+{% endblock page_content %}

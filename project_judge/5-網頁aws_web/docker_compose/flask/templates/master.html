@@ -1,0 +1,64 @@
+{% extends "_base.html" %}
+{% block title %}首頁{% endblock title %}
+{% block page_content %}
+
+
+
+
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+<!-- Google fonts-->
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+
+{% include "_styles.html" %}
+
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+<link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<!-- <link href="css/styles.css" rel="stylesheet" /> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+<script>
+    var setVanta = () => {
+        if (window.VANTA) window.VANTA.WAVES({
+            el: ".s-page-1 .s-section-1 .s-section",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00
+        })
+    }
+    _strk.push(function () {
+        setVanta()
+        window.edit_page.Event.subscribe("Page.beforeNewOneFadeIn", setVanta)
+    })
+</script>
+
+
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">AI法官</h1>
+                <hr class="line1" size="6px" style="opacity: 100%">
+                <h2 class="text-white-50 mx-auto mt-2 force">AI-assisted sentencing system</h2>
+                <h2 class="text-white-50 mx-auto mt-2 force">
+                    <font size="6.5">人工智慧輔助傷害罪量刑系統</font>
+                </h2>
+                <h2 class="text-white-50 mx-auto mt-2 force">for Offenses of Causing Bodily Harm</h2>
+                <hr class="line1" size="4px" style="opacity: 80%">
+                <a class="btn btn-primary fa-3x fa-beat" href="/predict" style="display: inline-block;">
+                    predict</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+{% endblock page_content %}

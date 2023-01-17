@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+        <property>
+                <name>fs.defaultFS</name>
+                <value>hdfs://hdfsha</value>
+        </property>
+        <property>
+                <name>fs.default.name</name>
+                <value>hdfs://hdfsha</value>
+        </property>
+        <property>
+                <name>hadoop.proxyuser.root.groups</name>
+                <value>bigred</value>
+        </property>
+        <property>
+                <name>hadoop.proxyuser.root.users</name>
+                <value>bigred</value>
+        </property>
+        <property>
+                <name>io.compression.codecs</name>
+                <value>org.apache.hadoop.io.compress.BZip2Codec,org.apache.hadoop.io.compress.GzipCodec</value>
+        </property>
+		<property>
+                <name>hadoop.security.authorization</name>
+                <value>true</value>
+        </property>
+        <!-- HA -->
+        <property>
+                <name>ha.zookeeper.quorum</name>
+                <value>dtm3,dtm4,dtm1</value>
+        </property>
+
+</configuration>
+

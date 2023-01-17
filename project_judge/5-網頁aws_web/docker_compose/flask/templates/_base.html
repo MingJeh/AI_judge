@@ -1,0 +1,60 @@
+<!-- practice start -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+  <title>{% block title %}Document{% endblock title %}</title>
+  <!-- {% block styles %}
+  {% include "_styles.html" %}
+  {% endblock styles %} -->
+  {% block scripts %}
+  {% include "_scripts.html" %}
+  {% endblock scripts %}
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="carousel.css" rel="stylesheet">
+
+  {% endblock head %}
+</head>
+
+<body>
+  {% block body %}
+  <div>
+    {% include "_navbar.html" %}
+  </div>
+  <main>
+    {% block page_content %}
+    {% endblock page_content %}
+  </main>
+
+  {% include "_footer.html" %}
+
+  {% endblock body %}
+</body>
+
+</html>
+<!-- practice end -->

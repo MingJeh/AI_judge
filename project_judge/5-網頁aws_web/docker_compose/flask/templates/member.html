@@ -1,0 +1,223 @@
+{% extends "_base.html" %}
+{% block title %}團隊介紹{% endblock title %}
+{% block page_content %}
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<style>
+    #containerchange {
+        width: 80%;
+        padding-right: 80px;
+        padding-left: 80px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* 改bar的顏色 */
+
+
+    #mainNav {
+        min-height: 3.5rem;
+        background-color: #552e2d;
+        /* background-color: #2d4855 */
+
+    }
+
+    strong {
+        text-decoration-color: #c15448;
+        text-decoration-thickness: 4px;
+        text-underline-offset: 4px
+    }
+
+    .author-block {
+        border-top: 1px solid #EBEBEB;
+    }
+
+    .author-card {
+        padding: 0 30px;
+        border-right: 1px solid #EBEBEB;
+        margin: 50px 0;
+    }
+
+    .text-center {
+        text-align: center !important;
+    }
+
+    .author-image {
+        height: 200px;
+        width: 200px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 10px;
+        border: 5px solid transparent;
+        box-shadow: 0 0 0 2px #ffe187;
+    }
+
+    .mb-3 {
+        color: #EBEBEB;
+    }
+
+    .post-title {
+        color: #ffe187;
+        font-weight: 700;
+
+    }
+</style>
+<br><br>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+            <img src="../static/assets/img/group1.png" class="d-block w-100" alt="判決預測">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="../static/assets/img/group2.png" class="d-block w-100" alt="團隊">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="../static/assets/img/group3_b.png" class="d-block w-100" alt="團隊">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+
+    </button>
+
+</div>
+<header style="background-color: #7a8388">
+
+    <div class="container px-4 py-5">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <section class="section-sm">
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="col-lg-4 col-sm-6 author-block">
+                            <div class="author-card text-center">
+
+                                <img class="author-image" src="../static/assets/img/member1.jpg">
+
+                                <h3 class="mb-2">
+                                    <p class="post-title">呂文馨</p>
+                                </h3>
+                                <p class="mb-3">資料視覺化與分析、AWS<br>
+                                    Hadoop系統架構建置<br>
+                                    網路爬蟲</p>
+                                <a class="btn btn-primary" href="https://github.com/hsiiin/Hsin">about me</a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 author-block">
+                            <div class="author-card text-center">
+
+                                <img class="author-image" src="../static/assets/img/member2.jpg">
+
+                                <h3 class="mb-2">
+                                    <p class="post-title">蔡佾橙</p>
+                                </h3>
+                                <p class="mb-3">資料清洗與分析、AWS<br>
+                                    Hadoop系統架構建置<br>
+                                    網路爬蟲
+                                </p>
+                                <a class="btn btn-primary" href="https://github.com/rocktsai">about me</a>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 author-block">
+                            <div class="author-card text-center">
+
+                                <img class="author-image" src="../static/assets/img/member3.jpg">
+
+                                <h3 class="mb-2">
+                                    <p class="post-title">李明哲</p>
+                                </h3>
+                                <p class="mb-3">特徵工程<br>
+                                    Hadoop系統架構建置<br>
+                                    網路爬蟲、資料清整</p>
+                                <a class="btn btn-primary" href="https://github.com/MingJeh">about me</a>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 author-block">
+                            <div class="author-card text-center">
+
+                                <img class="author-image" src="../static/assets/img/member4.jpg">
+
+                                <h3 class="mb-2">
+                                    <p class="post-title">林暐峻</p>
+                                </h3>
+                                <p class="mb-3">Hadoop系統架構建置<br>
+                                    網路爬蟲、資料清整<br>
+                                    預測模型訓練</p>
+                                <a class="btn btn-primary" href="https://github.com/deocoplay/GitHub">about me</a>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 author-block">
+                            <div class="author-card text-center">
+
+                                <img class="author-image" src="../static/assets/img/member5.jpg">
+
+                                <h3 class="mb-2">
+                                    <p class="post-title">呂美萱</p>
+                                </h3>
+                                <p class="mb-3">網頁呈現、AWS<br>
+                                    Hadoop系統架構建置<br>
+                                    網路爬蟲</p>
+                                <a class="btn btn-primary" href="https://github.com/dorothylu717?tab=repositories">about
+                                    me</a>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 author-block">
+                            <div class="author-card text-center">
+
+                                <img class="author-image" src="../static/assets/img/member6.jpg">
+
+                                <h3 class="mb-2">
+                                    <p class="post-title">吳宗穎</p>
+                                </h3>
+                                <p class="mb-3">資料視覺化與分析<br>
+                                    Hadoop系統架構建置<br>
+                                    網路爬蟲</p>
+                                <a class="btn btn-primary" href="https://github.com/Sophisycho">about me</a>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    </div>
+
+</header>
+
+
+
+{% endblock page_content %}

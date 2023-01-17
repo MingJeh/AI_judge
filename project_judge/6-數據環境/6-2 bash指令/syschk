@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pc="dta2 dtm1 dtm2 dtm3 dtm4 dtw1 dtw2 dtw3 dtw4 dtw5 dtw6"
+
+for n in $pc
+do
+  ip=$(ssh $n hostname -i)
+  [[ "$?"==0 ]] && echo "$n ip=$ip ok"
+done

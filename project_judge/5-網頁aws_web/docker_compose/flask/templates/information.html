@@ -1,0 +1,291 @@
+{% extends "_base.html" %}
+{% block title %}認識傷害罪{% endblock title %}
+{% block page_content %}
+<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<!-- <link rel="stylesheet2" href="{{ url_for('static', filename='bootstrap-5.1.3-dist/css/bootstrap.css') }}"> -->
+<!-- <link rel="stylesheet3" href="{{ url_for('static', filename='bootstrap-5.1.3-dist/css/bootstrap.min.css') }}"> -->
+
+<!-- <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> -->
+<!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<!-- <script src="{{ url_for('static', filename='bootstrap-5.1.3-dist/js/bootstrap.js') }}"></script> -->
+
+<style>
+    #mainNav {
+        min-height: 3.5rem;
+        background-color: rgba(234, 130, 137, 1);
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        /* background-color: transparent;
+        transition: background-color 0.3s ease-in-out; */
+    }
+
+    /* 不要改到navbar 調整大小 */
+    #containerchange {
+        width: 80%;
+        padding-right: 80px;
+        padding-left: 80px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #containerchange2 {
+        width: 50%;
+        padding-right: 80px;
+        padding-left: 80px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+    .strong {
+        text-decoration: underline;
+        text-decoration-color: #c15448;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+
+    }
+
+
+
+    .container2 {
+        border: #c15448 5px solid;
+        border-radius: 0.5rem;
+        border-width: 2px;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        padding: 1rem;
+
+    }
+
+    .content {
+        /* border: #c15448 5px solid;
+        border-radius: 0.5rem;
+        border-width: 2px; */
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        padding: 1rem;
+
+    }
+
+    blockquote {
+        text-align: left;
+        font-size: 14px;
+    }
+
+
+    .text-color-50 {
+
+        color: saddlebrown
+    }
+
+    /* #collapsechange1,
+    #collapsechange2 {
+        background-color: #edcfd7dd;
+        text-align: left;
+    } */
+
+    .container .panel .border a {
+        color: #c15448;
+        text-align: center;
+        text-decoration: none;
+
+    }
+
+    .container .panel .border a:hover {
+        color: #6f3a04;
+        text-align: center;
+        text-decoration: none;
+
+    }
+
+    .card {
+        text-align: center;
+        width: auto
+    }
+
+    a.btn,
+    button.btn {
+        font-size: 16px !important
+    }
+
+    .content {
+        margin-bottom: 0rem;
+    }
+</style>
+
+<header style="background-color: #fbf9e7">
+    <br>
+    <br>
+    <br>
+
+
+    <div class="d-flex justify-content-center">
+        <div class="text-center">
+
+            <section class="section">
+                <div class="container" id="containerchange">
+
+                    <article>
+
+                        <div class="post-slider mb-4">
+                            <img src="../static/assets/img/ying4.png" class="card-img" alt="傷害罪?">
+
+                        </div>
+                        <div class="content">
+                            <hr><br><br>
+                            <h1 class="mx-auto my-0 text-uppercase">刑法規定之傷害罪</h1>
+                            <div class="content">
+                                <p class="strong">
+                                    根據刑法第 277 條，傷害人之身體或健康者，處五年以下有期徒刑、拘役或五十萬元以下罰金。<br>
+                                    犯前項之罪，因而致人於死者，
+                                    處無期徒刑或七年以上有期徒刑；<br>致重傷者，處三年以上十年以下有期徒刑。
+                                </p>
+                            </div>
+                        </div>
+                        <hr><br>
+                        <div class="content">
+                            <h1 class="mx-auto my-0 text-uppercase">傷害罪須符合的構成要件</h1>
+                            <br>
+                            <p>在刑法中的構成要件，是指法律上是否成立犯罪的一個階層，
+                                簡單來說就是檢驗犯罪是否成立!
+                                以傷害罪舉例，<br>
+                                不能因為甲打了乙一拳，就直接認定甲構成傷害罪，
+                                我們必須把傷害罪拆開來看:</p>
+
+                        </div>
+
+
+                        <div class="container" id="containerchange2">
+                            <p>
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample"
+                                    role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    客觀要件
+                                </a>
+
+                            </p>
+
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    有傷害行為(甲攻擊打人)、<br>傷害結果(乙生理或心理的受傷)的因果關係
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="container" id="containerchange2">
+
+
+                            <p>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample2" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    主觀要件 </button>
+                            </p>
+                            <div class="collapse" id="collapseExample2">
+                                <div class="card card-body">
+                                    甲有傷害故意
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="content">
+
+                            <p>所以要都符合上述的要件才算符合<strong class="strong">傷害罪的構成要件</strong></p>
+
+                        </div>
+                        <div class="containerchange">
+                            <h2 class="text-color-50 mx-auto mt-2 mb-5">刑法過失傷害罪</h2>
+                            <p>雖然有些傷害的釀成並非刻意，但因為傷害罪的構成要件是看<code><strong>「傷害」有無造成</strong></code>，<br>不論刻意或過失，只要讓人受傷，便<strong
+                                    class="strong">符合傷害罪構成要件。</strong>
+                            </p>
+
+                            法律判決中的過失傷害罪多發生於車禍事件，比如駕駛時因為駕駛不當而發生碰撞，造成對方骨折或是傷亡。<br>雖然非刻意，但因為造成「生理上的傷害」是事實，屬於過失傷害罪，被告者就有可能要承擔1年以下有期徒刑、<br>拘役或10萬元以下罰金的刑罰。
+
+                            </p>
+
+
+                        </div>
+                        <br><br>
+                        <div class="containerchange">
+                            <h2 class="text-color-50 mx-auto mt-2 mb-5">未成年傷害罪</h2>
+                            <p><code><strong>基於年齡</strong></code>的關係，如果是小孩打人，依據刑法18-1項規定，未滿14歲者不處罰，<br>14歲以上未滿18歲的人，則是減輕刑期。因此，即使提出告訴，也可能為不起訴或是緩起訴處分。
+                            </p>
+
+                        </div>
+                        <br>
+
+                        <hr>
+                        <br><br>
+
+
+
+
+                        <div class="container2">
+
+
+                            <p style="text-align: left">
+                                <strong>司法官養成曠日廢時</strong><br>
+                                求學期間六年，畢業馬上考上司法官特考，經過兩年職前訓練、五年候補司法官、審查及格之後再當一年試署法官檢察官、再一年通過審查才成為實任司法官。<br>
+                                <strong>訴訟案件數量越來越多</strong><br>
+                                2017年每位地院法官一天要審完3件案子，
+                                2022年每位法官一天要審完4.4件案子。
+                            </p>
+
+
+                        </div>
+                        <blockquote>
+                            <p>
+                                <li>製作此量刑系統減輕法官作業量、提升法院效率，進而達到節省國家訴訟資源的目的，並有助於降低個別法官的主觀因素。</li>
+                                <br>
+                                <li>在律師檢察官方面，他們可以在訴訟期間參考模型的判決結果來調整，決定未來辯論時的攻防方向，節省需要花費的時間及心力。
+                                    例如模型得出的結果是有罪且刑度較高，律師此時就可考慮是否往減刑方向調整訴訟策略，而不是堅持往替被告主張無罪的方向。</li>
+                                <br>
+                                <li>因此我們希望這個量刑系統可以服務到的對象除了法官檢察官等司法體系的人員之外，民間的律師也可以參考。</li>
+                            </p>
+                        </blockquote>
+                        <br><br><br>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</header>
+
+
+
+
+
+{% endblock page_content %}

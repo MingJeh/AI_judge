@@ -1,0 +1,58 @@
+<head>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+    <!-- <script>
+        $('.collapse1').collapse1({
+            parent: "#accordion2"
+        });
+        $('.accordion-toggle').click(function () {
+            $(this).parent().next().collapse1('toggle');
+        });
+        $('.accordion-body').on('show', function (e) {
+            $(e.target).css({ "color": "#f60" });
+        })
+
+    </script> -->
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
+        <div class="container px-4 px-lg-5">
+            <!-- <a class="navbar-brand" href="#page-top">首頁</a> -->
+            <!-- <a class="navbar-brand" href="/">首頁</a> -->
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/member">團隊介紹</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/information">認識傷害罪</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/predict">罪刑預測</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dashboard">數據分析</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">首頁</a></li>
+
+
+
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+</body>
